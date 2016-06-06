@@ -1,0 +1,13 @@
+# IDEs
+.idea/
+*.swp
+*.swo
+
+# generated files and static
+public/**
+
+# node modules
+node_modules/**
+
+#build templates
+build/**

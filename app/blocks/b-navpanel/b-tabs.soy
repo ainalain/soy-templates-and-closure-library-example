@@ -1,0 +1,40 @@
+/**
+ * Tabs with content corresponding to navpanel's items
+ */
+{namespace bTabs.Tabs.Template autoescape="strict"}
+
+/**
+ * Constructor.
+ * @param tabObjs List of tabs beings rendred
+ */
+{template .base autoescape="strict" kind="html"}
+	<div class="b-tabs">
+		{foreach $tabObj in $tabObjs}
+			{call .tab data="$tabObj"/}
+		{/foreach}
+	</div>
+
+{/template}
+
+
+/**
+* Tab template
+* @param active item being rendered
+* @param url item being rendered
+* @param text item being rendered
+* @param? image User's avatar
+*/
+{template .tab autoescape="strict" kind="html"}
+	<div class="b-menu__tab tab__{$url} {if $active}tab_active{/if}">
+		<p>{$text}</p>
+		{if $url == 'profile'}
+			<div class="profile__content__avatar">
+	            <img src={$image} class="avatar_img"/>
+	        </div>
+			<div class="profile__content__info">
+			<p class="profile__content__info info__fullname">Имя Фамилия</p>
+			</div>
+			{call bUser.Profession.Template.base data="all" /}
+		{/if}
+	</div>
+{/template}

@@ -1,0 +1,83 @@
+@mixin transform($direction) {
+    -webkit-transform: translateX($direction);
+    -moz-transform: translateX($direction);
+    -ms-transform: translateX($direction);
+    transform: translateX($direction);
+}
+
+.avatar_img {
+    display: block;
+    margin: 30px auto;
+}
+
+.profile__content__info {
+    margin: 0 auto;
+
+}       
+
+    .info__profession__dropdown {
+        position: relative;
+        left: 50%;
+        @include transform(-50%);
+        display: inline-block;
+        margin: 15px auto;
+
+}
+
+
+.close-button {
+    margin-left: 5px;
+
+    &.close-button_disabled {
+        display: none;
+    }
+    &.goog-control-disabled {
+        display: none;
+    }
+}
+
+.chooseProf {
+    background-color: #FF9442;
+    color: black;
+    padding: 8px;
+    font-size: 16px;
+    min-width: 180px;
+    border: none;
+    cursor: pointer;
+    &.show__myProf {
+        background: #FFFFFF;
+        border: none;
+        cursor: default;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 1.3em;
+        text-align: center;
+    }
+}
+
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    &.show {
+        display: block;
+    }
+
+    a {
+        color: black;
+        padding: 8px;
+        font-size: 1em;
+        text-decoration: none;
+        box-sizing: border-box; 
+        display: block;
+        min-width: 180px;
+        &:hover {
+            background-color: #f1f1f1;
+        }
+    }
+}

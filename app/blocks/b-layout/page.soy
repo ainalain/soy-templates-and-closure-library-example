@@ -1,0 +1,26 @@
+/**
+ * Html skeleton for page with nav panel 
+ */
+{namespace bPage.Page.Template autoescape="strict"}
+
+/**
+ * Constructor.
+ */
+{template .base autoescape="strict" kind="html"}
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<link rel="stylesheet" href="css/all.css"/>
+			<link rel="stylesheet" href="css/font-awesome-4.6.1/css/font-awesome.min.css"/>
+			
+		<head>
+		<body class="b-page">
+			<div class="b-page__content">
+			{call bNavbar.Navbar.Template.base data="all" /}
+			{call bTabs.Tabs.Template.base data="all" /}
+			</div>
+			<script src="scripts.js"></script>
+			//<script src="b-main.js"></script>
+		</body>
+	</html>
+{/template}

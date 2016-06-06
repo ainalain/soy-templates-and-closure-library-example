@@ -1,0 +1,64 @@
+/**
+ * Profession section profession in user's profile
+ */
+{namespace bUser.Profession.Template autoescape="strict"}
+
+/**
+ * Constructor.
+ */
+{template .base autoescape="strict" kind="html"}
+
+	<div class="profile__content__info info__profession">
+		{call .dropdown data="all" /}
+	</div>
+
+{/template}
+
+
+/**
+ * Dropdown menu with professioins items.
+ */
+{template .dropdown autoescape="strict" kind="html"}
+
+	<div class="info__profession__dropdown">
+	    	{call .chooseButton data="all" /}
+	    	{call .content data="all" /}
+	</div>
+
+{/template}
+
+
+/**
+ * Button template for managing dropdown
+ */
+{template .chooseButton autoescape="strict" kind="html"}
+
+	<button class="chooseProf" type="button" value="profession">Add profession</button>
+
+{/template}
+
+
+/**
+ * Content with professions items.
+ * @param profLinks List of professions being rendered
+ */
+{template .content autoescape="strict" kind="html"}
+
+	<div class="dropdown-content">
+		{foreach $profLink in $profLinks}
+			{call .a data="$profLink" /}
+		{/foreach}
+	</div>
+
+{/template}
+
+
+/**
+ * A tag for profession item
+ * @param text Profession 
+ */
+{template .a autoescape="strict" kind="html"}
+ 	<a href="#">{$text}</a>
+
+{/template}
+

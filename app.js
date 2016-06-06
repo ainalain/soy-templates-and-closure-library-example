@@ -18,6 +18,7 @@ soy.loadFiles([path.join(__dirname, 'build/compiledServerSoy/server.soy.concat.j
 
 var app = express();
 app.use(express.static(path.join(__dirname,'/public')));
+app.use(express.static(path.join(__dirname, "/external")));
 app.use(express.static(path.join(__dirname, "/blocks")));
 app.use(express.static(path.join(__dirname, "/node_modules")));
 
@@ -41,4 +42,4 @@ app.get('/', function(req, res) {
 
 
 app.listen(3000);
-console.log('Server running at http://127.0.0.1:8080/');
+console.log('Server running at http://127.0.0.1:3000/');

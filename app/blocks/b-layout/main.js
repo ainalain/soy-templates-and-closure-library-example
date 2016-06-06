@@ -18,7 +18,7 @@ navpanel.decorate(panelElement);
 var tabs = new bTab.Tab();
 var profsection = new iProfession.Profession();
 var profsectionelement = goog.dom.getElementByClass('info__profession');
-profsection.decorateInternal(profsectionelement);
+profsection.decorate(profsectionelement);
 
 
 var view = new smView.CloseView();

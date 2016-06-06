@@ -1,7 +1,7 @@
 /**
  * Html skeleton for page with nav panel 
  */
-{namespace bPage.Page.Template autoescape="strict"}
+{namespace tr.bLayout.Template autoescape="strict"}
 
 /**
  * Constructor.
@@ -16,8 +16,8 @@
 		<head>
 		<body class="b-page">
 			<div class="b-page__content">
-			{call bNavbar.Navbar.Template.base data="all" /}
-			{call bTabs.Tabs.Template.base data="all" /}
+			{call tr.bNavbar.Template.base data="all" /}
+			{call tr.bTabs.Template.base data="all" /}
 			</div>
 			<script src="scripts.js"></script>
 			</body>

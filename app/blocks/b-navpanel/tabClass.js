@@ -1,10 +1,10 @@
 goog.provide('bTab.Tab');
 
-goog.require('bTabs.Tabs.Template');
+goog.require('tr.bTabs.Template');
 goog.require('goog.soy');
 goog.require('goog.ui.Component');
 
-var tabTemplate = bTabs.Tabs.Template;
+var tabTemplate = tr.bTabs.Template;
 
 /**
  * @param {Object=} opt_params

@@ -1,6 +1,6 @@
 goog.provide('tr.bProfile');
 
-goog.provide('tr.bEditElements.EditElements');
+//goog.provide('tr.bEditElements.EditElements');
 /**
  * creates instances of tr.lProfile.UserNameEdit and tr.lProfile.EmailEdit
 */

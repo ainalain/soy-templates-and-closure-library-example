@@ -25,15 +25,15 @@ app.use(express.static(path.join(__dirname, "/node_modules")));
 
 app.get('/', function(req, res) {
 
-    var html = soy.render('bPage.Page.Template.base', {linkObjs: [{text: 'Contacts', url: '#contacts', active: true},
+    var html = soy.render('tr.bLayout.Template.base', {linkObjs: [{text: 'Контакты', url: '#contacts', active: true},
                                                             {text: 'Trusted', url: '#trusted', active: false},
-                                                            {text: 'Profile', url: '#profile', active: false}],                                                    
-                                                        tabObjs: [{text: 'HERE YOU CAN ADD YOUR CONTACTS', url: 'contacts', active: true}, 
-                                                            {text: 'HERE YOU CAN ADD YOUR TRUSTED CONTACTS', url: 'trusted', active: false},
-                                                            {text: 'HERE YOU CAN EDIT YOUR PROFILE', url: 'profile', active: false, image: 'img/toy_creatror.png', 
-                                                        profLinks: [{text: 'Accountant'}, {text: 'Car mechanic'}, {text: 'Cosmetologist'},
-                                                            {text: 'Dentist'}, {text: 'Film-maker'}, {text:'Lawyer'}, {text:'Nurse'},
-                                                        {text: 'Python developer'}, {text: 'Scene-designer'}, {text: 'Taxi driver'}]}]});
+                                                            {text: 'Профиль', url: '#profile', active: false}],                                                    
+                                                        tabObjs: [{text: 'Здесь Вы можете добавить ваши контакты', url: 'contacts', active: true}, 
+                                                            {text: 'Здесь Вы можете добавить ваши проверенные контакты', url: 'trusted', active: false},
+                                                            {text: ' ', url: 'profile', active: false, image: 'img/toy_creatror.png', 
+                                                        profLinks: [{text: 'Адвокат'}, {text: ' Автослесарь'}, {text: 'Веб-дизайнер'},
+                                                            {text: 'Дизайнер интерьеров'}, {text: 'Копирайтер'}, {text:'Программист PhP'}, {text:'Няня'},
+                                                        {text: 'Риэлтор'}, {text: 'Стоматолог'}, {text: 'Таксист'}]}]});
 
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(html);

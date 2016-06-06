@@ -1,6 +1,6 @@
 goog.provide('bNavPanel.NavPanel');
 
-goog.require('bNavbar.Navbar.Template');
+goog.require('tr.bNavbar.Template');
 goog.require('goog.soy');
 goog.require('goog.ui.Component');
 goog.require('goog.events');
@@ -8,7 +8,7 @@ goog.require('goog.events.EventType');
 goog.require('goog.dom.classlist');
 
 
-var navbarTemplate = bNavbar.Navbar.Template;
+var navbarTemplate = tr.bNavbar.Template;
 /**
  * @param {Object=} opt_params
  * @extends {goog.ui.Component}

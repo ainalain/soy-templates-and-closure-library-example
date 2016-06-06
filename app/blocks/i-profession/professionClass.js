@@ -1,6 +1,6 @@
 goog.provide('iProfession.Profession');
 
-goog.require('bUser.Profession.Template');
+goog.require('tr.bProfession.Template');
 goog.require('goog.soy');
 goog.require('goog.ui.Component');
 goog.require('goog.events');
@@ -39,23 +39,7 @@ goog.inherits(iProfession.Profession, goog.ui.Component);
 goog.scope(function() {
 
 var Profession = iProfession.Profession;
-var professionTemplate = bUser.Profession.Template;
-
-/**
-* Template-based dom element creation.
-* @public
-*/
-/*Profession.prototype.createDom = function() {
-    goog.base(this, 'createDom');
-    var self = this;
-    var params = this.params_;
-    var element = goog.soy.renderAsElement(professionTemplate.base, params);
-    this.element_ = element; 
-    this.decorateInternal(element);
-       
-    goog.dom.appendChild(this.parent_, this.element_);
-
-};*/
+var professionTemplate = tr.bProfession.Template;
 
 
 /**
@@ -75,7 +59,7 @@ Profession.prototype.decorateInternal = function(element) {
      * @private
      */
 Profession.prototype.initElements_ = function() {
-    this.dropdownButton_ = this.getElementByClass('chooseProf');
+    this.dropdownButton_ = this.getElementByClass('info__profession__dropdown__chooseButton');
     this.dropdownContent_ = this.getElementByClass('dropdown-content');
     this.DropdownProfession_ = this.getElementByClass('info__profession__dropdown');
        
@@ -135,7 +119,7 @@ Profession.prototype.chooseProfession = function() {
 Profession.prototype.restoreButton = function() {
     this.dropdownButton_.innerHTML = "Add profession";
     goog.dom.classlist.remove(this.dropdownButton_, 'show__myProf');
-    this.toggleDropdown();
+    //this.toggleDropdown();
     
 };
 

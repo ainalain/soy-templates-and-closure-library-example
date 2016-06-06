@@ -37,6 +37,16 @@ goog.inherits(smControl.CloseControl, goog.ui.Control);
 
 
 /**
+ * Event enum
+ * @enum {string}
+ */
+smControl.CloseControl.Event = {
+    CLICK:  goog.events.EventType.CLICK
+    //CLICK:  View.Event.CLICK
+};
+
+
+/**
 * @override
 */
 smControl.CloseControl.prototype.enterDocument = function() {
@@ -56,6 +66,7 @@ smControl.CloseControl.prototype.enterDocument = function() {
 */
 smControl.CloseControl.prototype.onClick = function(e) {
     e.stopPropagation();
+    this.dispatchEvent(smControl.CloseControl.Event.CLICK);
     this.setState(goog.ui.Component.State.DISABLED, true);
     this.view_.setState(this, goog.ui.Component.State.DISABLED, true);  
 };
@@ -65,9 +76,7 @@ smControl.CloseControl.prototype.onClick = function(e) {
 */
 smControl.CloseControl.prototype.showCloseBtn = function(e) {
     e.stopPropagation();
-    /*this.setState(goog.ui.Component.State.DISABLED, false);
-    this.view_.setState(this, goog.ui.Component.State.DISABLED, false);*/
-   var element = this.getElement();
+    var element = this.getElement();
     goog.dom.classlist.remove(element, 'close-button_disabled');
     goog.dom.classlist.remove(element, 'goog-control-disabled');
 };

@@ -1,0 +1,14 @@
+{namespace tr.bComments.Template}
+
+/**
+* Comment section template
+*/
+{template .base autoescape="strict" kind="html"}
+	<div class="b-comments">
+		<div class="b-comments__comment">
+			{call tr.bComment.Template.base /}
+		</div>
+	</div>
+{/template}
+
+

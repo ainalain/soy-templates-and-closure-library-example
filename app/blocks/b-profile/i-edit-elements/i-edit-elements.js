@@ -1,4 +1,4 @@
-goog.provide('tr.bProfile.bEditElements.EditElements');
+goog.provide('tr.bProfile.iEditElements.EditElements');
 
 goog.require('goog.dom.classes');
 goog.require('goog.dom.classlist');
@@ -11,7 +11,7 @@ goog.require('goog.ui.Component');
 * @constructor
 * @extends {goog.ui.Component}
 */
-tr.bProfile.bEditElements.EditElements = function() {
+tr.bProfile.iEditElements.EditElements = function() {
 	goog.base(this);
 
 	/**
@@ -57,10 +57,10 @@ tr.bProfile.bEditElements.EditElements = function() {
 	this.nameEditConfirmButton_ = null;
 	};
 
-goog.inherits(tr.bProfile.bEditElements.EditElements, goog.ui.Component);
+goog.inherits(tr.bProfile.iEditElements.EditElements, goog.ui.Component);
 
 goog.scope(function() {
-	var EditElements = tr.bProfile.bEditElements.EditElements;
+	var EditElements = tr.bProfile.iEditElements.EditElements;
 
 	/**
 	* CSS-class enum
@@ -69,7 +69,7 @@ goog.scope(function() {
 	EditElements.CssClass = {
 		ROOT: 'b-edit-elements',
 		INFO_ELEMENTS: 'b-edit-elements__info-elements',
-		INFO_TEXT: 'b-edit-elements__text',
+		INFO_TEXT: 'b-edit-elements__value',
 		INFO_EDIT_BUTTON: 'b-edit-elements__edit-button',
 		EDIT_ELEMENTS: 'b-edit-elements__edit-elements',
 		EDIT_TEXTFIELD: 'b-edit-elements__edit-input',
@@ -147,7 +147,7 @@ goog.scope(function() {
 	*/ 
 	EditElements.prototype.editButtonPressHandler_ = function() {
 		this.nameEditTextfield_.value = this.nameInfoText_.innerText.trim();
-		this.toggleNameElements_();
+		this.toggleElements_();
 	};
 
 	/**
@@ -160,13 +160,13 @@ goog.scope(function() {
 			this.nameInfoText_.innerText = val_;
 		}
 
-		this.toggleNameElements_(); 
+		this.toggleElements_();
 	};
 
 	/**
 	* @private
 	*/ 
-	EditElements.prototype.toggleNameElements_ = function() {
+	EditElements.prototype.toggleElements_ = function() {
 		goog.dom.classlist.toggle(
 			this.nameInfoElements_,
 			EditElements.CssClass.HIDDEN
@@ -189,7 +189,7 @@ goog.scope(function() {
 		}
 
 		if (key.keyCode == 27) {
-			this.toggleNameElements_();
+			this.toggleElements_();
 			return;
 		}
 	};

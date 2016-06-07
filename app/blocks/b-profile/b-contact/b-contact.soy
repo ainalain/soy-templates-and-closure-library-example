@@ -1,0 +1,26 @@
+{namespace tr.bProfile.bContact.Template}
+
+/**
+* Contact template
+*/
+{template .base autoescape="strict" kind="html"}
+	<div class="b-contact b-edit-elements">
+		<div class="b-contact__wrapper">
+			<div class="b-contact__type">
+				Электронная почта
+			</div>
+			<div class="b-contact__value b-edit-elements__value">
+				specter978@gmail.com
+			</div>
+			<div class="b-edit-elements__edit-button b-contact__edit-button"></div>
+		</div>
+		<div class="b-edit-elements__edit-elements b-contact__edit-elements g-hidden">
+			<div class="b-edit-elements__edit-field b-contact__edit-field">
+				<input type="text" class="b-edit-elements__edit-input b-contact__edit-input" placeholder="Введите ваше имя и фамилию">
+				<div class="b-edit-elements__confirm-button b-contact__confirm-button">
+					<span class="b-contact__confirm-button-text">OK</span>
+				</div>
+			</div>
+		</div>
+	</div>
+{/template}

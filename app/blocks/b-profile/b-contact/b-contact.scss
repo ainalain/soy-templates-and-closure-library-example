@@ -1,0 +1,57 @@
+.b-contact__wrapper {
+	position: relative;
+	display: inline-block;
+}
+
+.b-contact__type, .b-contact__value {
+	font-size: 1.3rem;
+}
+
+.b-contact__value {
+	margin-top: 10px;
+}
+
+.b-contact__edit-button {
+	cursor: pointer;
+	position: absolute;
+	right: -30px;
+	bottom: 0;
+	width: 20px;
+	height: 20px;
+	background: $edit-button-picture;
+}
+
+.b-contact__edit-elements {
+	margin-top: 10px;
+}
+
+.b-contact__edit-field {
+	position: relative;
+	display: inline-block;
+}
+
+.b-contact__edit-input {
+	display: inline-block;
+	height: 20px;
+	padding: 0;
+	border: 1px solid grey;
+	width: 200px;
+}
+
+.b-contact__confirm-button {
+	cursor: pointer;
+	font-size: 1rem;
+	position: absolute;
+	right: -60px;
+	top: 0;	
+	text-align: center;
+	border-radius: 6px;
+	margin-left: 10px;
+	width: 50px;
+	height: 20px;
+	border: 1px solid grey;
+}
+
+.b-contact__confirm-button-text {
+	vertical-align: middle;	
+}

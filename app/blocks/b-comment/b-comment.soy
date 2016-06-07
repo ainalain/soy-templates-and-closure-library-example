@@ -1,0 +1,19 @@
+{namespace tr.bComment.Template}
+
+/**
+* Comment template
+*/
+{template .base autoescape="strict" kind="html"}
+	<div class="b-comment">
+		<div class="b-comment__user-avatar">
+			{call tr.bUserAvatar.Template.base /}
+		</div>
+		<div class="b-comment-body">
+			<div class="b-comment-body__header">
+				<div class="b-comment-body__commenter-name">Иванов Алексей</div>
+			</div>
+			<div class="b-comment-body__text">С тех пор, как познакомился с Александром, перестал пользоваться убером. Ведь гораздо приятнее проехаться с уже ставшим другом. Никогда не опаздывает и берёт совсем недорого
+			</div>
+		</div>
+	</div>
+{/template}

@@ -1,16 +1,58 @@
-goog.provide('tr.bProfile');
+goog.provide('tr.bProfile.Profile');
 
-//goog.provide('tr.bEditElements.EditElements');
+goog.require('tr.bProfile.bEditElements.EditElements');
+goog.require('goog.ui.Component');
+goog.require('goog.dom');
+
 /**
- * creates instances of tr.lProfile.UserNameEdit and tr.lProfile.EmailEdit
+ * Profile edit component
+ * @constructor
+ * @extends {goog.ui.Component}
 */
-jQuery(function() {
-	var domEditElements = goog.dom.getElementByClass(
-		tr.bEditElements.EditElements.CssClass.ROOT
-	);
+tr.bProfile.Profile = function() {
+	goog.base(this);
+};
+goog.inherits(tr.bProfile.Profile, goog.ui.Component);
 
-	for (var i = 0; i < domEditElements.length; i++) {
-		var editElements = new tr.bEditElements.EditElements();
-		editElements.decorate(domEditElements[i]);		
+goog.scope(function(){
+	var Profile = tr.bProfile.Profile;
+	var EditElements = tr.bProfile.bEditElements.EditElements;
+
+	/**
+	 * Internal decorates the DOM element
+	 * @override
+	 * @param {node} element
+	*/
+	Profile.prototype.decorateInternal = function(element) {
+		goog.base(this, 'decorateInternal', element);
+
+		this.initEditElements_();
 	}
+
+	/**
+	 * @override	 
+	*/
+	Profile.prototype.enterDocument = function() {
+		goog.base(this, 'enterDocument');
+	};
+
+	/*
+	 * @private
+	*/
+	Profile.prototype.initEditElements_ = function() {
+		var domEditableBlocks = goog.dom.getElementByClass(
+			EditElements.CssClass.ROOT
+		);
+
+		var editElementsInstance;
+		var domEditableBlock;
+
+		for (var i = 0; i < domEditableBlocks.length; i++) {
+			editElementsInstance = new EditElements();
+			domEditableBlock = domEditableBlocks[i]
+
+			editElementsInstance.decorate(domEditableBlock);
+		}
+	};
+
 });

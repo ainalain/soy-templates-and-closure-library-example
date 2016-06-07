@@ -1,4 +1,4 @@
-goog.provide('tr.lProfile.UserNameEdit');
+goog.provide('tr.bProfile.bEditElements.EditElements');
 
 goog.require('goog.dom.classes');
 goog.require('goog.dom.classlist');
@@ -7,11 +7,11 @@ goog.require('goog.soy');
 goog.require('goog.ui.Component');
 
 /**
-* User name edit component
+* Component that decorates editable blocks
 * @constructor
 * @extends {goog.ui.Component}
 */
-tr.lProfile.UserNameEdit = function() {
+tr.bProfile.bEditElements.EditElements = function() {
 	goog.base(this);
 
 	/**
@@ -57,59 +57,59 @@ tr.lProfile.UserNameEdit = function() {
 	this.nameEditConfirmButton_ = null;
 	};
 
-goog.inherits(tr.lProfile.UserNameEdit, goog.ui.Component);
+goog.inherits(tr.bProfile.bEditElements.EditElements, goog.ui.Component);
 
 goog.scope(function() {
-	var UserNameEdit = tr.lProfile.UserNameEdit;
+	var EditElements = tr.bProfile.bEditElements.EditElements;
 
 	/**
 	* CSS-class enum
 	* @enum {string}
 	*/
-	UserNameEdit.CssClass = {
-		ROOT: 'b-user-name',
-		NAME_INFO_ELEMENTS: 'b-user-name__info-elements',
-		NAME_INFO_TEXT: 'b-user-name__text',
-		NAME_INFO_EDIT_BUTTON: 'b-user-name__edit-button',
-		NAME_EDIT_ELEMENTS: 'b-user-name__edit-elements',
-		NAME_EDIT_TEXTFIELD: 'b-edit-elements__edit-input',
-		NAME_EDIT_CONFIRM_BUTTON: 'b-edit-elements__confirm-button',
+	EditElements.CssClass = {
+		ROOT: 'b-edit-elements',
+		INFO_ELEMENTS: 'b-edit-elements__info-elements',
+		INFO_TEXT: 'b-edit-elements__text',
+		INFO_EDIT_BUTTON: 'b-edit-elements__edit-button',
+		EDIT_ELEMENTS: 'b-edit-elements__edit-elements',
+		EDIT_TEXTFIELD: 'b-edit-elements__edit-input',
+		EDIT_CONFIRM_BUTTON: 'b-edit-elements__confirm-button',
 		HIDDEN: 'g-hidden'
 	};
 
 	/** 
 	*@override
 	*/
-	UserNameEdit.prototype.decorateInternal = function(element) {
+	EditElements.prototype.decorateInternal = function(element) {
 		goog.base(this, 'decorateInternal', element);
 
 		this.nameInfoElements_ = goog.dom.getElementByClass(
-			UserNameEdit.CssClass.NAME_INFO_ELEMENTS,
+			EditElements.CssClass.INFO_ELEMENTS,
 			element
 			);
 
 		this.nameInfoText_ = goog.dom.getElementByClass(
-			UserNameEdit.CssClass.NAME_INFO_TEXT,
+			EditElements.CssClass.INFO_TEXT,
 			element
 			);
 
 		this.nameInfoEditButton_ = goog.dom.getElementByClass(
-			UserNameEdit.CssClass.NAME_INFO_EDIT_BUTTON,
+			EditElements.CssClass.INFO_EDIT_BUTTON,
 			element
 			);
 
 		this.nameEditElements_ = goog.dom.getElementByClass(
-			UserNameEdit.CssClass.NAME_EDIT_ELEMENTS,
+			EditElements.CssClass.EDIT_ELEMENTS,
 			element
 			);
 
 		this.nameEditTextfield_ = goog.dom.getElementByClass(
-			UserNameEdit.CssClass.NAME_EDIT_TEXTFIELD,
+			EditElements.CssClass.EDIT_TEXTFIELD,
 			element
 			);
 
 		this.nameEditConfirmButton_ = goog.dom.getElementByClass(
-			UserNameEdit.CssClass.NAME_EDIT_CONFIRM_BUTTON,
+			EditElements.CssClass.EDIT_CONFIRM_BUTTON,
 			element
 			);
 	};
@@ -117,7 +117,7 @@ goog.scope(function() {
 	/**
 	* @override
 	*/ 
-	UserNameEdit.prototype.enterDocument = function() {
+	EditElements.prototype.enterDocument = function() {
 		goog.base(this, 'enterDocument');
 
 		var handler = this.getHandler();
@@ -145,7 +145,7 @@ goog.scope(function() {
 	/**
 	* @private
 	*/ 
-	UserNameEdit.prototype.editButtonPressHandler_ = function() {
+	EditElements.prototype.editButtonPressHandler_ = function() {
 		this.nameEditTextfield_.value = this.nameInfoText_.innerText.trim();
 		this.toggleNameElements_();
 	};
@@ -153,7 +153,7 @@ goog.scope(function() {
 	/**
 	* @private
 	*/ 
-	UserNameEdit.prototype.confirmButtonPressHandler_ = function() {
+	EditElements.prototype.confirmButtonPressHandler_ = function() {
 		var val_ = this.nameEditTextfield_.value.trim();
 
 		if (val_) {
@@ -166,22 +166,22 @@ goog.scope(function() {
 	/**
 	* @private
 	*/ 
-	UserNameEdit.prototype.toggleNameElements_ = function() {
+	EditElements.prototype.toggleNameElements_ = function() {
 		goog.dom.classlist.toggle(
 			this.nameInfoElements_,
-			UserNameEdit.CssClass.HIDDEN
+			EditElements.CssClass.HIDDEN
 			);
 
 		goog.dom.classlist.toggle(
 			this.nameEditElements_,
-			UserNameEdit.CssClass.HIDDEN
+			EditElements.CssClass.HIDDEN
 			);
 	};
 
 	/**
 	* @private
 	*/ 
-	UserNameEdit.prototype.textfieldKeyPressHandler_ = function(key) {
+	EditElements.prototype.textfieldKeyPressHandler_ = function(key) {
 
 		if (key.keyCode == 13) {
 			this.confirmButtonPressHandler_();

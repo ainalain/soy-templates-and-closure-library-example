@@ -1,6 +1,6 @@
 goog.provide('tr.bProfile.Profile');
 
-goog.require('tr.bProfile.bEditElements.EditElements');
+goog.require('tr.bProfile.iInfoEditor.InfoEditor');
 goog.require('goog.ui.Component');
 goog.require('goog.dom');
 
@@ -16,7 +16,7 @@ goog.inherits(tr.bProfile.Profile, goog.ui.Component);
 
 goog.scope(function(){
 	var Profile = tr.bProfile.Profile;
-	var EditElements = tr.bProfile.bEditElements.EditElements;
+	var InfoEditor = tr.bProfile.iInfoEditor.InfoEditor;
 
 	/**
 	 * Internal decorates the DOM element
@@ -26,7 +26,7 @@ goog.scope(function(){
 	Profile.prototype.decorateInternal = function(element) {
 		goog.base(this, 'decorateInternal', element);
 
-		this.initEditElements_();
+		this.initInfoEditor_();
 	}
 
 	/**
@@ -39,19 +39,19 @@ goog.scope(function(){
 	/*
 	 * @private
 	*/
-	Profile.prototype.initEditElements_ = function() {
+	Profile.prototype.initInfoEditor_ = function() {
 		var domEditableBlocks = goog.dom.getElementByClass(
-			EditElements.CssClass.ROOT
+			InfoEditor.CssClass.ROOT
 		);
 
-		var editElementsInstance;
+		var infoEditorInstance;
 		var domEditableBlock;
 
 		for (var i = 0; i < domEditableBlocks.length; i++) {
-			editElementsInstance = new EditElements();
+			infoEditorInstance = new InfoEditor();
 			domEditableBlock = domEditableBlocks[i]
 
-			editElementsInstance.decorate(domEditableBlock);
+			infoEditorInstance.decorate(domEditableBlock);
 		}
 	};
 

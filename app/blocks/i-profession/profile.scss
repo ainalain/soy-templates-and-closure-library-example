@@ -16,9 +16,6 @@
 }       
 
     .info__profession__dropdown {
-        position: relative;
-        left: 50%;
-        @include transform(-50%);
         display: inline-block;
         margin: 15px auto;
 

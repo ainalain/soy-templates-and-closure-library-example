@@ -65,4 +65,4 @@ gulp.task('scripts', ['soy', 'gjslint'], function () {
 });
 
 
-gulp.task('default', ['gjslint', 'sass', 'watch', 'images', 'scripts']);
+gulp.task('default', ['gjslint', 'sass', 'images', 'scripts']);

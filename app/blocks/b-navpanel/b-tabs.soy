@@ -21,20 +21,12 @@
 * Tab template
 * @param active item being rendered
 * @param url item being rendered
-* @param text item being rendered
-* @param? image User's avatar
 */
 {template .tab autoescape="strict" kind="html"}
 	<div class="b-menu__tab tab__{$url} {if $active}tab_active{/if}">
-		<p>{$text}</p>
 		{if $url == 'profile'}
-			<div class="profile__content__avatar">
-	            <img src={$image} class="avatar_img"/>
-	        </div>
-			<div class="profile__content__info">
-			<p class="profile__content__info info__fullname">Имя Фамилия</p>
-			</div>
-			{call tr.bProfession.Template.base data="all" /}
+			{call tr.bProfile.Template.base data="all" /}
+			//{call tr.bProfession.Template.base data="all" /}
 		{/if}
 	</div>
 {/template}

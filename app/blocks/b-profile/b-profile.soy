@@ -1,8 +1,7 @@
 {namespace tr.bProfile.Template}
 
 /**
-* Profile template
-* @param? params {?}
+* Profile template 
 */
 {template .base autoescape="strict" kind="html"}
 	<div class="b-profile">
@@ -15,7 +14,7 @@
 				{call tr.bProfile.bTrustedCount.Template.base /}
 			</div>
 			<div class="b-profile__user-name">
-				{call tr.bProfile.bUserName.Template.base /}
+				{call tr.bProfile.bUserName.Template.base data="all" /}
 			</div>
 			<div class="b-profile__user-profession">
 				{call tr.bProfile.bUserProfession.Template.base /}

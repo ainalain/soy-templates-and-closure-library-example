@@ -1,3 +1,17 @@
+.g-clearfix {
+	content: "" !important;
+	display: table !important;
+	clear: both !important;
+}
+
+.g-hidden {
+	display: none !important;
+}
+
+.g-input-field-error {
+	outline: 2px solid red !important;
+}
+
 .b-profile__user-avatar, .b-profile__user-name, .b-profile__user-profession {
 	text-align: center;
 	margin-top: 20px;

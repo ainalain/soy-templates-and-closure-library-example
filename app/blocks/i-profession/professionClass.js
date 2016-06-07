@@ -23,9 +23,7 @@ goog.require('goog.dom.classlist');
      * @type {object}
      */
     this.params_ = opt_params || {};
-    //this.panelContainerClass_ = opt_params['containerClass'];
-  //  this.parent_ = goog.dom.getElementByClass(this.panelContainerClass_);
-
+    
 	/**
     * Event handler
     * @type goog.events.EventHandler
@@ -33,6 +31,7 @@ goog.require('goog.dom.classlist');
     */
     this.handler_ = new goog.events.EventHandler(this);
 }
+// goog.ui.Component has to be replaced with goog.ui.Control ot cl.iControl.Control from clobl
 goog.inherits(iProfession.Profession, goog.ui.Component);
 
 
@@ -103,6 +102,10 @@ Profession.prototype.initChoiceListener_ = function() {
 
 
 /**
+* In this version of goog.ui.Component inheritance
+* button doesn't become disabled after profession has been chosen.
+* Use cl.iControl.Control instead of goo.ui.Component
+* to manage button's states.
 * @private
 */
 Profession.prototype.chooseProfession = function() {
@@ -114,13 +117,17 @@ Profession.prototype.chooseProfession = function() {
 };
 
 /**
+* This functionality is temporary and has to be
+* replaced with more convenient events handling.
+* Use clobl library and cl.iControl.Control's functionality
+* for events dispatching.
 * @public
 */
 Profession.prototype.restoreButton = function() {
-    this.dropdownButton_.innerHTML = "Add profession";
+    this.dropdownButton_.innerHTML = "Добавить профессию";
     goog.dom.classlist.remove(this.dropdownButton_, 'show__myProf');
-    //this.toggleDropdown();
-    
+       
 };
+
 
 }); //goog.scope

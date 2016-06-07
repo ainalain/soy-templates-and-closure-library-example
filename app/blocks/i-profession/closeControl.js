@@ -42,7 +42,6 @@ goog.inherits(smControl.CloseControl, goog.ui.Control);
  */
 smControl.CloseControl.Event = {
     CLICK:  goog.events.EventType.CLICK
-    //CLICK:  View.Event.CLICK
 };
 
 
@@ -72,6 +71,10 @@ smControl.CloseControl.prototype.onClick = function(e) {
 };
 
 /**
+* This functionality is temporary and has to be
+* replaced with more convenient events handling.
+* Use clobl library and cl.iControl.Control's functionality
+* for events dispatching.
 * @public
 */
 smControl.CloseControl.prototype.showCloseBtn = function(e) {

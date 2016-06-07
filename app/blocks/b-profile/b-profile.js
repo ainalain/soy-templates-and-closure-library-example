@@ -23,7 +23,7 @@ goog.scope(function(){
 	 * @override
 	 * @param {node} element
 	*/
-	Profile.prototype.decorateInternal = function(element) {
+	Profile.prototype.decorateInternal = function(element) {		
 		goog.base(this, 'decorateInternal', element);
 
 		this.initInfoEditor_();
@@ -40,7 +40,7 @@ goog.scope(function(){
 	 * @private
 	*/
 	Profile.prototype.initInfoEditor_ = function() {
-		var domEditableBlocks = goog.dom.getElementByClass(
+		var domEditableBlocks = goog.dom.getElementsByClass(
 			InfoEditor.CssClass.ROOT
 		);
 

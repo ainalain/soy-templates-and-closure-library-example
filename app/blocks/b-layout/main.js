@@ -5,15 +5,13 @@ goog.require('bNavPanel.NavPanel');
 goog.require('smView.CloseView');
 goog.require('smControl.CloseControl');
 goog.require('iProfession.Profession');
+goog.require('tr.bProfile.Profile');
 
 
 
 var navpanel = new bNavPanel.NavPanel();
 var panelElement = goog.dom.getElementByClass('b-menu');
 navpanel.decorate(panelElement);
-
-
-
 
 var tabs = new bTab.Tab();
 var profsection = new iProfession.Profession();
@@ -31,3 +29,6 @@ var dropContent = profsection.dropdownContent_;
 goog.events.listen(dropContent, goog.events.EventType.CLICK, closeBtn.showCloseBtn, false, closeBtn);
 goog.events.listen(closeBtn, goog.events.EventType.CLICK, profsection.restoreButton, false, profsection);
 
+var profile = new tr.bProfile.Profile();
+var domProfileBlock = goog.dom.getElementByClass('b-profile');
+profile.decorate(domProfileBlock);

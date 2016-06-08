@@ -1,6 +1,7 @@
 goog.provide('tr.bProfile.Profile');
 
 goog.require('tr.bProfile.iInfoEditor.InfoEditor');
+goog.require('tr.bProfile.bMiddlePanel.MiddlePanel')
 goog.require('goog.ui.Component');
 goog.require('goog.dom');
 
@@ -17,6 +18,7 @@ goog.inherits(tr.bProfile.Profile, goog.ui.Component);
 goog.scope(function(){
 	var Profile = tr.bProfile.Profile;
 	var InfoEditor = tr.bProfile.iInfoEditor.InfoEditor;
+	var MiddlePanel = tr.bProfile.bMiddlePanel.MiddlePanel;
 
 	/**
 	 * Internal decorates the DOM element
@@ -27,6 +29,8 @@ goog.scope(function(){
 		goog.base(this, 'decorateInternal', element);
 
 		this.initInfoEditor_();
+
+		this.initMiddlePanel_();
 	}
 
 	/**
@@ -54,5 +58,15 @@ goog.scope(function(){
 			infoEditorInstance.decorate(domEditableBlock);
 		}
 	};
+
+	Profile.prototype.initMiddlePanel_ = function() {
+		var domMiddlePanel = goog.dom.getElementsByClass(
+			MiddlePanel.CssClass.ROOT
+		);
+
+		var MiddlePanelInstance = new MiddlePanel()
+
+		MiddlePanelInstance.decorate(domMiddlePanel);
+	}
 
 });

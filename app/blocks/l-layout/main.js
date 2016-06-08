@@ -1,26 +1,26 @@
-goog.provide('bMain.Main');
+goog.provide('tr.bMain.Main');
 
-goog.require('bTab.Tab');
-goog.require('bNavPanel.NavPanel');
-goog.require('smView.CloseView');
-goog.require('smControl.CloseControl');
-goog.require('iProfession.Profession');
+goog.require('tr.bTab.Tab');
+goog.require('tr.bNavPanel.NavPanel');
+goog.require('tr.iCloseControl.View');
+goog.require('tr.iCloseControl.CloseControl');
+goog.require('tr.bProfession.Profession');
 goog.require('tr.bProfile.Profile');
 
 
 
-var navpanel = new bNavPanel.NavPanel();
+var navpanel = new tr.bNavPanel.NavPanel();
 var panelElement = goog.dom.getElementByClass('b-menu');
 navpanel.decorate(panelElement);
 
-var tabs = new bTab.Tab();
-var profsection = new iProfession.Profession();
+var tabs = new tr.bTab.Tab();
+var profsection = new tr.bProfession.Profession();
 var profsectionelement = goog.dom.getElementByClass('info__profession');
 profsection.decorate(profsectionelement);
 
 
-var view = new smView.CloseView();
-var closeBtn = new smControl.CloseControl(view);
+var view = new tr.iCloseControl.View();
+var closeBtn = new tr.iCloseControl.CloseControl(view);
 
 var parentElement = closeBtn.getDomHelper().getElementByClass('info__profession__dropdown');
 closeBtn.render(parentElement);

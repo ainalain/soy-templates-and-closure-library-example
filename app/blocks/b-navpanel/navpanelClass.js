@@ -1,4 +1,4 @@
-goog.provide('bNavPanel.NavPanel');
+goog.provide('tr.bNavPanel.NavPanel');
 
 goog.require('tr.bNavbar.Template');
 goog.require('goog.soy');
@@ -8,13 +8,12 @@ goog.require('goog.events.EventType');
 goog.require('goog.dom.classlist');
 
 
-var navbarTemplate = tr.bNavbar.Template;
 /**
  * @param {Object=} opt_params
  * @extends {goog.ui.Component}
  * @constructor
  */
-bNavPanel.NavPanel = function(opt_params) {
+tr.bNavPanel.NavPanel = function(opt_params) {
 
 	goog.base(this);
 
@@ -32,12 +31,13 @@ bNavPanel.NavPanel = function(opt_params) {
     this.handler_ = new goog.events.EventHandler(this);
 
 }
-goog.inherits(bNavPanel.NavPanel, goog.ui.Component);
+goog.inherits(tr.bNavPanel.NavPanel, goog.ui.Component);
 
 goog.scope(function() {
 
 
-var navPanel = bNavPanel.NavPanel;
+var navPanel = tr.bNavPanel.NavPanel;
+var navbarTemplate = tr.bNavbar.Template;
 
 /**
 * Css class enum
@@ -52,15 +52,6 @@ navPanel.CssClass = {
     ACTIVE_LINK: 'link-menu_active'
 };
 
-
-/**
-* Template-based dom element creation.
-* @public
-*/
-/*navPanel.prototype.createDom = function() {
-	goog.base(this, 'createDom');
-    this.decorateInternal(); 
-};*/
 
 /**
      * Internal decorates the DOM element
@@ -79,10 +70,10 @@ navPanel.prototype.decorateInternal = function(element) {
      */
 navPanel.prototype.initElements_ = function() {
     this.currentItem_ = this.getElementByClass(
-        bNavPanel.NavPanel.CssClass.CURRENT_ITEM
+        navPanel.CssClass.CURRENT_ITEM
     );
     this.activeLink_ = this.getElementByClass(
-        bNavPanel.NavPanel.CssClass.ACTIVE_LINK
+        navPanel.CssClass.ACTIVE_LINK
     );
 
 }

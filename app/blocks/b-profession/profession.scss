@@ -1,10 +1,3 @@
-@mixin transform($direction) {
-    -webkit-transform: translateX($direction);
-    -moz-transform: translateX($direction);
-    -ms-transform: translateX($direction);
-    transform: translateX($direction);
-}
-
 .avatar_img {
     display: block;
     margin: 30px auto;

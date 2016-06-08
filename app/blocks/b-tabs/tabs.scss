@@ -1,0 +1,19 @@
+.b-tabs {
+	margin: auto;
+	margin-top: 50px;
+	display: block;
+}
+
+.b-menu__tab {
+	display: none;
+
+	&.tab_active {
+		display: block;
+	}
+
+	p {
+		font-weight: 500;
+		font-size: 1.4em;
+		text-align: center;
+	}
+}

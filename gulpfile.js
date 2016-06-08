@@ -44,7 +44,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('images', function () {
-    return gulp.src(path.join(__dirname, '/app/blocks/i-profession/*.png'))
+    return gulp.src(path.join(__dirname, '/app/blocks/**/*.png'))
     .pipe(gulp.dest(path.join(__dirname, 'public/img')))
 });
 
@@ -56,7 +56,7 @@ gulp.task('scripts', ['soy', 'gjslint'], function () {
     return gulpHelper.js.build({
         outputFiles: [
             {
-                entryPoint: 'bMain.Main',
+                entryPoint: 'tr.bMain.Main',
                 fileName: 'scripts.js'
             }
         ]

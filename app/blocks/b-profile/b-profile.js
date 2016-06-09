@@ -60,7 +60,7 @@ goog.scope(function(){
 	};
 
 	Profile.prototype.initMiddlePanel_ = function() {
-		var domMiddlePanel = goog.dom.getElementsByClass(
+		var domMiddlePanel = goog.dom.getElementByClass(
 			MiddlePanel.CssClass.ROOT
 		);
 

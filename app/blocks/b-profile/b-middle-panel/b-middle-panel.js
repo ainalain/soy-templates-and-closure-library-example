@@ -69,11 +69,13 @@ goog.scope(function() {
 		goog.base(this, 'decorateInternal', element);
 
 		this.iconTrusted_ = goog.dom.getElementByClass(
-			MiddlePanel.CssClass.ICON_TRUSTED
+			MiddlePanel.CssClass.ICON_TRUSTED,
+			element
 			);
 
 		this.iconProfile_ = goog.dom.getElementByClass(
-			MiddlePanel.CssClass.ICON_PROFILE
+			MiddlePanel.CssClass.ICON_PROFILE,
+			element
 			);
 
 		this.domCommentsBlock_ = goog.dom.getElementByClass(
